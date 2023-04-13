@@ -6,7 +6,18 @@ public class Acao {
         int valorAleatorio = numero.nextInt(valorMaximo - valorMinimo + 1) + valorMinimo;
         return valorAleatorio;
     }
-    public int fatorPoder(int tipoElementoFatorAtaque, int tipoElementoFatorDefesa){
+    public double fatorPoder(double tipoElementoFatorAtaque, double tipoElementoFatorDefesa){
+
+        if(tipoElementoFatorAtaque == tipoElementoFatorDefesa){
+            return 0.5;
+        }
+        if (tipoElementoFatorAtaque==1 && tipoElementoFatorDefesa==2||tipoElementoFatorAtaque==2&&tipoElementoFatorDefesa==3||tipoElementoFatorAtaque==3&&tipoElementoFatorDefesa==4||tipoElementoFatorAtaque==4&&tipoElementoFatorDefesa==1){
+            return 2.0;
+        }
+        if (tipoElementoFatorAtaque ==1&&tipoElementoFatorDefesa==3||tipoElementoFatorAtaque ==1&&tipoElementoFatorDefesa==4||tipoElementoFatorAtaque ==2&&tipoElementoFatorDefesa==1||tipoElementoFatorAtaque ==2&&tipoElementoFatorDefesa==4||tipoElementoFatorAtaque ==3&&tipoElementoFatorDefesa==1||tipoElementoFatorAtaque ==3&&tipoElementoFatorDefesa==2||tipoElementoFatorAtaque ==4&&tipoElementoFatorDefesa==2||tipoElementoFatorAtaque ==4&&tipoElementoFatorDefesa==3){
+            return 1.0;
+        }
+        return 0.0;
 
     }
 }

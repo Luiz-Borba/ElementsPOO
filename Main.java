@@ -1,7 +1,8 @@
 public class Main {
     public static void main(String[] args) {
-        Teste ar = new Teste();
-        System.out.println(ar.getAtaque());
+        Acao acao = new Acao();
+        System.out.println(acao.fatorPoder(1,2));
+
     }
 
 
