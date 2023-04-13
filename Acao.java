@@ -6,4 +6,7 @@ public class Acao {
         int valorAleatorio = numero.nextInt(valorMaximo - valorMinimo + 1) + valorMinimo;
         return valorAleatorio;
     }
+    public int fatorPoder(int tipoElementoFatorAtaque, int tipoElementoFatorDefesa){
+
+    }
 }
