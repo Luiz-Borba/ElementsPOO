@@ -6,7 +6,7 @@ public class Acao {
         int valorAleatorio = numero.nextInt(valorMaximo - valorMinimo + 1) + valorMinimo;
         return valorAleatorio;
     }
-    public double fatorPoder(double tipoElementoFatorAtaque, double tipoElementoFatorDefesa){
+    public double fatorPoder(int tipoElementoFatorAtaque, int tipoElementoFatorDefesa){
 
         if(tipoElementoFatorAtaque == tipoElementoFatorDefesa){
             return 0.5;
@@ -18,6 +18,13 @@ public class Acao {
             return 1.0;
         }
         return 0.0;
-
     }
+public double calculoAtaqueBase(double poder,int ataqueBase,int defesa){
+        double dano = (ataqueBase*poder)/defesa;
+        return dano;
+}
+public double calculoAtaquePoder(double poder,int ataqueBase,int defesa,double fator){
+        double dano = (poder*ataqueBase)/(defesa*fator);
+        return dano;
+}
 }

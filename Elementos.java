@@ -1,6 +1,6 @@
 public class Elementos {
         Acao acao = new Acao();
-        private int tipoElemento;
+        private int tipoElemento=0;
         private int poder = acao.valorAleatorio(10,30);
         private int ataque=acao.valorAleatorio(5,15);
         private int defesa = acao.valorAleatorio(5,15);
