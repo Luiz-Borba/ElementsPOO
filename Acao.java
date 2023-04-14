@@ -19,8 +19,8 @@ public class Acao {
         }
         return 0.0;
     }
-public double calculoAtaqueBase(double poder,int ataqueBase,int defesa){
-        double dano = (ataqueBase*poder)/defesa;
+public double calculoAtaqueBase(double poderAtacante,int ataqueBaseAtacante,int defesaDefensor){
+        double dano = (ataqueBaseAtacante*poderAtacante)/defesaDefensor;
         return dano;
 }
 public double calculoAtaquePoder(double poder,int ataqueBase,int defesa,double fator){
