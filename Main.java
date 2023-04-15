@@ -11,13 +11,17 @@ public class Main {
         double vida = fogo.getVida();
         double vidaApoAtaque = fogo.getVida()-dano;
         System.out.println(dano);
-        System.out.print("A vida atua do defensor é de : ");
+        System.out.print("A vida atual do defensor é de : ");
         System.out.println(fogo.getVida());
         System.out.print("Vida após ataque : ");
         System.out.println(vidaApoAtaque);
 
         fogo.setVida(vidaApoAtaque);
         System.out.println("Sua vida agora é : "+fogo.getVida());
+        double testeVelocidade = acao.verificadorDeVelocidade(fogo.getVelocidade(), ar.getVelocidade(), agua.getVelocidade(), 1);
+        System.out.println("A segunda luta é :" + testeVelocidade);
+
+
     }
 
 

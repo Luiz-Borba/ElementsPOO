@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.Random;
 
 public class Acao {
@@ -19,12 +20,19 @@ public class Acao {
         }
         return 0.0;
     }
-public double calculoAtaqueBase(double poderAtacante,double ataqueBaseAtacante,double defesaDefensor){
+    public double calculoAtaqueBase(double poderAtacante,double ataqueBaseAtacante,double defesaDefensor){
         double dano = (ataqueBaseAtacante*poderAtacante)/defesaDefensor;
         return dano;
-}
-public double calculoAtaquePoder(double poder,double ataqueBase,double defesa,double fator){
+    }
+    public double calculoAtaquePoder(double poder,double ataqueBase,double defesa,double fator){
         double dano = (poder*ataqueBase)/(defesa*fator);
         return dano;
-}
+    }
+    public double verificadorDeVelocidade(double elemento1, double elemento2, double elemento3,int verificador) {
+        double[] velocidade = {elemento1, elemento2, elemento3};
+        Arrays.sort(velocidade);
+        double posicao = velocidade[verificador];
+        return posicao;
+    }
+
 }
