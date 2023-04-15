@@ -15,6 +15,9 @@ public class Main {
         System.out.println(fogo.getVida());
         System.out.print("Vida após ataque : ");
         System.out.println(vidaApoAtaque);
+
+        fogo.setVida(vidaApoAtaque);
+        System.out.println("Sua vida agora é : "+fogo.getVida());
     }
 
 
