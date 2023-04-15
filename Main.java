@@ -1,6 +1,7 @@
 public class Main {
     public static void main(String[] args) {
         Acao acao = new Acao();
+        Verificacoes verificacao = new Verificacoes();
         Ar ar = new Ar();
         Terra terra = new Terra();
         Fogo fogo = new Fogo();
@@ -18,7 +19,7 @@ public class Main {
 
         fogo.setVida(vidaApoAtaque);
         System.out.println("Sua vida agora é : "+fogo.getVida());
-        double testeVelocidade = acao.verificadorDeVelocidade(fogo.getVelocidade(), ar.getVelocidade(), agua.getVelocidade(), 1);
+        double testeVelocidade = verificacao.verificadorDeVelocidade(fogo.getVelocidade(), ar.getVelocidade(), agua.getVelocidade(), 1);
         System.out.println("A segunda luta é :" + testeVelocidade);
 
 

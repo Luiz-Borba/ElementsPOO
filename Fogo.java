@@ -1,4 +1,4 @@
-public class Fogo extends Elementos{
+public class    Fogo extends Elementos{
     Acao acao = new Acao();
     private int tipoElemento = 3;
     private double vida = acao.valorAleatorio(200,400);

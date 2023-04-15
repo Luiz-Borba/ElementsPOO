@@ -28,11 +28,7 @@ public class Acao {
         double dano = (poder*ataqueBase)/(defesa*fator);
         return dano;
     }
-    public double verificadorDeVelocidade(double elemento1, double elemento2, double elemento3,int verificador) {
-        double[] velocidade = {elemento1, elemento2, elemento3};
-        Arrays.sort(velocidade);
-        double posicao = velocidade[verificador];
-        return posicao;
-    }
+
+
 
 }
