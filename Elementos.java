@@ -1,33 +1,33 @@
 public class Elementos {
         Acao acao = new Acao();
         private int tipoElemento=0;
-        private int poder = acao.valorAleatorio(10,30);
-        private int ataque=acao.valorAleatorio(5,15);
-        private int defesa = acao.valorAleatorio(5,15);
-        private  int velocidade = acao.valorAleatorio(1,10);
-        private int vida = acao.valorAleatorio(200,400);
+        private double poder = acao.valorAleatorio(10,30);
+        private double ataque=acao.valorAleatorio(5,15);
+        private double defesa = acao.valorAleatorio(5,15);
+        private  double velocidade = acao.valorAleatorio(1,10);
+        private double vida = 0;
 
-        public int getVelocidade() {
+        public double getVelocidade() {
                 return velocidade;
         }
 
-        public int getPoder() {
+        public double getPoder() {
                 return poder;
         }
 
-        public int getVida() {
+        public double getVida() {
                 return vida;
         }
 
-        public int getDefesa() {
+        public double getDefesa() {
                 return defesa;
         }
 
-        public int getAtaque() {
+        public double getAtaque() {
                 return ataque;
         }
 
-        public int getTipoElemento() {
+        public double getTipoElemento() {
                 return tipoElemento;
         }
 
