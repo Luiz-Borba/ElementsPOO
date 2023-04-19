@@ -4,7 +4,7 @@ public class Elementos {
         private double poder = acao.valorAleatorio(10,30);
         private double ataque=acao.valorAleatorio(5,15);
         private double defesa = acao.valorAleatorio(5,15);
-        private  double velocidade = acao.valorAleatorio(1,10);
+        private  int velocidade = acao.valorAleatorio(1,10);
         private double vida = 0;
 
         public double getVelocidade() {

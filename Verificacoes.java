@@ -1,7 +1,6 @@
 import java.util.Arrays;
 
 public class Verificacoes {
-    Acao verificar = new Acao();
     Agua agua = new Agua();
     Fogo fogo = new Fogo();
     Terra terra = new Terra();
