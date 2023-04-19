@@ -15,4 +15,9 @@ public class Agua extends Elementos{
     public void setVida(int vida) {
         this.vida = vida;
     }
+
+    @Override
+    public double getTipoElemento() {
+        return tipoElemento;
+    }
 }

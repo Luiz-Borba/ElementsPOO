@@ -17,6 +17,11 @@ Acao acao = new Acao();
                 return vida;
         }
 
+        @Override
+        public double getTipoElemento() {
+                return tipoElemento;
+        }
+
         public void setVida(double vida) {
                 this.vida = vida;
         }

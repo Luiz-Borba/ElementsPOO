@@ -20,4 +20,9 @@ public class    Fogo extends Elementos{
     public double getVelocidade() {
         return super.getVelocidade();
     }
+
+    @Override
+    public double getTipoElemento() {
+        return tipoElemento;
+    }
 }

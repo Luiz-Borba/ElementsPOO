@@ -21,4 +21,9 @@ public class Ar extends Elementos{
         public double getVida() {
                 return vida;
         }
+
+        @Override
+        public double getTipoElemento() {
+                return tipoElemento;
+        }
 }

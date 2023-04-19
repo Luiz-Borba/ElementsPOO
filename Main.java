@@ -6,22 +6,7 @@ public class Main {
         Terra terra = new Terra();
         Fogo fogo = new Fogo();
         Agua agua = new Agua();
-        System.out.println("teste ataque normal");
-        System.out.print("O dano é de : ");
-        double dano = acao.calculoAtaqueBase(ar.getAtaque(),ar.getPoder(),fogo.getDefesa());
-        double vida = fogo.getVida();
-        double vidaApoAtaque = fogo.getVida()-dano;
-        System.out.println(dano);
-        System.out.print("A vida atual do defensor é de : ");
-        System.out.println(fogo.getVida());
-        System.out.print("Vida após ataque : ");
-        System.out.println(vidaApoAtaque);
-
-        fogo.setVida(vidaApoAtaque);
-        System.out.println("Sua vida agora é : "+fogo.getVida());
-        double testeVelocidade = verificacao.verificadorDeVelocidade(fogo.getVelocidade(), ar.getVelocidade(), agua.getVelocidade(), 1);
-        System.out.println("A segunda luta é :" + testeVelocidade);
-
+        System.out.println("teste : "+acao.fatorPoder(fogo.getTipoElemento(),terra.getTipoElemento()));
 
     }
 
