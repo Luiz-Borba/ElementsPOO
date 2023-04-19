@@ -6,27 +6,31 @@ public class Verificacoes {
     Fogo fogo = new Fogo();
     Terra terra = new Terra();
     Ar ar = new Ar();
-    public double verificadorDeVelocidade(double elemento1, double elemento2, double elemento3,int verificador) {
-        double[] velocidade = {elemento1, elemento2, elemento3};
+    public int verificadorDeVelocidade(double VelocidadeElemento1, double VelocidadeElemento2, double VelocidadeElemento3,int verificador) {
+        double[] velocidade = {VelocidadeElemento1, VelocidadeElemento2, VelocidadeElemento3};
         Arrays.sort(velocidade);
         double posicao = velocidade[verificador];
-        return posicao;
+        int id = 0;
+        if (posicao == agua.getVelocidade()){
+            id = (int) agua.getTipoElemento();
+            System.out.println("agua : "+ id);
+        }
+        else if (posicao == fogo.getVelocidade()){
+            id = (int) fogo.getTipoElemento();
+            System.out.println("fogo : "+ id);
+        }
+        else if (posicao == ar.getVelocidade()){
+            id= (int) ar.getTipoElemento();
+            System.out.println("ar : "+ id);
+        }
+        else if (posicao == terra.getVelocidade()){
+            id = (int) terra.getTipoElemento();
+            System.out.println("terra : "+ id);
+        }
+        else {
+            System.out.println("Erro");
+        }
+        return id;
     }
-    public double verificarInimigo(double velocidade){
-        double tipo = 0;
-        if (velocidade == agua.getVelocidade()){
-            tipo = (int) agua.getTipoElemento();
-        }
-        if (velocidade == fogo.getVelocidade()){
-            tipo = (int) fogo.getTipoElemento();
-        }
-        if (velocidade == ar.getVelocidade()){
-            tipo= ar.getTipoElemento();
-        }
-        if (velocidade == terra.getVelocidade()){
-            tipo = terra.getTipoElemento();
-        }
 
-        return tipo;
-    }
 }

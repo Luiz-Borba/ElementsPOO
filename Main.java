@@ -6,7 +6,8 @@ public class Main {
         Terra terra = new Terra();
         Fogo fogo = new Fogo();
         Agua agua = new Agua();
-        System.out.println("teste : "+acao.fatorPoder(fogo.getTipoElemento(),terra.getTipoElemento()));
+        System.out.println("teste : "+acao.fatorPoder(agua.getTipoElemento(),terra.getTipoElemento()));
+        System.out.println(verificacao.verificadorDeVelocidade(agua.getVelocidade(), fogo.getVelocidade(), terra.getVelocidade(), 2));
 
     }
 

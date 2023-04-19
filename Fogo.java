@@ -3,9 +3,6 @@ public class    Fogo extends Elementos{
     private int tipoElemento = 3;
     private double vida = acao.valorAleatorio(200,400);
 
-    public void setTipoElemento(int tipoElemento) {
-        this.tipoElemento = tipoElemento;
-    }
 
     public void setVida(double vida) {
         this.vida = vida;
