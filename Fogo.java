@@ -13,9 +13,11 @@ public class    Fogo extends Elementos{
         return vida;
     }
 
-    @Override
-    public double getVelocidade() {
-        return super.getVelocidade();
+    private int velocidade = acao.valorAleatorio(1,10);
+
+
+    public int getVelocidade() {
+        return velocidade;
     }
 
     @Override

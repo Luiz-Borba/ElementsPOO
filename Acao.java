@@ -2,9 +2,10 @@ import java.util.Arrays;
 import java.util.Random;
 
 public class Acao {
+    private static final Random random = new Random();
     public int valorAleatorio(int valorMinimo, int valorMaximo) {
-        Random numero = new Random();
-        int valorAleatorio = numero.nextInt(valorMaximo - valorMinimo + 1) + valorMinimo;
+
+        int valorAleatorio = random.nextInt(valorMaximo - valorMinimo + 1) + valorMinimo;
         return valorAleatorio;
     }
     public double fatorPoder(double tipoElementoFatorAtaque, double tipoElementoFatorDefesa){

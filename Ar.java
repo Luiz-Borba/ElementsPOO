@@ -2,6 +2,9 @@ public class Ar extends Elementos{
         Acao acao = new Acao();
 
         private int tipoElemento = 4;
+        private int velocidade = acao.valorAleatorio(1,10);
+
+
         private double vida =acao.valorAleatorio(200,400);
 
         public void setTipoElemento(int tipoElemento) {
@@ -12,9 +15,9 @@ public class Ar extends Elementos{
                 this.vida = vida;
         }
 
-        @Override
-        public double getVelocidade() {
-                return super.getVelocidade();
+
+        public int getVelocidade() {
+                return velocidade;
         }
 
         @Override

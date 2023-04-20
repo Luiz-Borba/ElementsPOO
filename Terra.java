@@ -7,9 +7,11 @@ Acao acao = new Acao();
                 this.tipoElemento = tipoElemento;
         }
 
-        @Override
-        public double getVelocidade() {
-                return super.getVelocidade();
+        private int velocidade = acao.valorAleatorio(1,10);
+
+
+        public int getVelocidade() {
+                return velocidade;
         }
 
         @Override
