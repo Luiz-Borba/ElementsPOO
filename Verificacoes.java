@@ -8,22 +8,18 @@ public class Verificacoes {
         int id = 0;
         if (posicao == agua.getVelocidade()){
             id = (int) agua.getTipoElemento();
-            System.out.println("agua : "+ id);
             return id;
         }
         if (posicao == fogo.getVelocidade()){
             id = (int) fogo.getTipoElemento();
-            System.out.println("fogo : "+ id);
             return id;
         }
         if (posicao == ar.getVelocidade()){
             id= (int) ar.getTipoElemento();
-            System.out.println("ar : "+ id);
             return id;
         }
         if (posicao == terra.getVelocidade()){
             id = (int) terra.getTipoElemento();
-            System.out.println("terra : "+ id);
             return id;
         }
         else {
