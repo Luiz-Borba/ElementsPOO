@@ -13,7 +13,7 @@ public class Menu {
         int segundoMaisVeloz;
         int terceiroMaisVeloz;
         int rodada=0;
-        int sair;
+        int ataque = 0;
         double fator;
         double dano;
         double statusVida;
@@ -42,7 +42,7 @@ public class Menu {
                             if (rodada ==1 && maisVeloz ==2){
                                 System.out.println("Como você deseja atacar?");
                                 System.out.println("1 - Ataque Elemental\n2 - Ataque Fisico\n3 - Sair do Programa");
-                                int ataque = input.nextInt();
+                                ataque = input.nextInt();
                                 if(ataque == 1){
                                     System.out.println("WaveNerd efeutou um ataque elemental!");
                                     fator = acao.descobrirFatorDePoder(terra.getTipoElemento(), agua.getTipoElemento());
@@ -67,7 +67,7 @@ public class Menu {
                             if (rodada == 1 && maisVeloz ==3 ){
                                 System.out.println("Como você deseja atacar?");
                                 System.out.println("1 - Ataque Elemental\n2 - Ataque Fisico");
-                                int ataque = input.nextInt();
+                                ataque = input.nextInt();
                                 if(ataque == 1){
                                     System.out.println("WaveNerd efeutou um ataque elemental!");
                                     fator = acao.descobrirFatorDePoder(terra.getTipoElemento(), fogo.getTipoElemento());
@@ -91,7 +91,7 @@ public class Menu {
                             if (rodada ==1 && maisVeloz ==4){
                                 System.out.println("Como você deseja atacar?");
                                 System.out.println("1 - Ataque Elemental\n2 - Ataque Fisico");
-                                int ataque = input.nextInt();
+                                ataque = input.nextInt();
                                 if(ataque == 1){
                                     System.out.println("WaveNerd efeutou um ataque elemental!");
                                     fator = acao.descobrirFatorDePoder(terra.getTipoElemento(), ar.getTipoElemento());
@@ -115,7 +115,7 @@ public class Menu {
                             if (rodada ==2 && segundoMaisVeloz ==2){
                                 System.out.println("Como você deseja atacar?");
                                 System.out.println("1 - Ataque Elemental\n2 - Ataque Fisico\n3 - Sair do Programa");
-                                int ataque = input.nextInt();
+                                ataque = input.nextInt();
                                 if(ataque == 1){
                                     System.out.println("WaveNerd efeutou um ataque elemental!");
                                     fator = acao.descobrirFatorDePoder(terra.getTipoElemento(), agua.getTipoElemento());
@@ -140,7 +140,7 @@ public class Menu {
                             if (rodada == 2 && segundoMaisVeloz ==3 ){
                                 System.out.println("Como você deseja atacar?");
                                 System.out.println("1 - Ataque Elemental\n2 - Ataque Fisico");
-                                int ataque = input.nextInt();
+                                ataque = input.nextInt();
                                 if(ataque == 1){
                                     System.out.println("WaveNerd efeutou um ataque elemental!");
                                     fator = acao.descobrirFatorDePoder(terra.getTipoElemento(), fogo.getTipoElemento());
@@ -164,7 +164,7 @@ public class Menu {
                             if (rodada ==2 && segundoMaisVeloz ==4){
                                 System.out.println("Como você deseja atacar?");
                                 System.out.println("1 - Ataque Elemental\n2 - Ataque Fisico");
-                                int ataque = input.nextInt();
+                                ataque = input.nextInt();
                                 if(ataque == 1){
                                     System.out.println("WaveNerd efeutou um ataque elemental!");
                                     fator = acao.descobrirFatorDePoder(terra.getTipoElemento(), ar.getTipoElemento());
@@ -188,7 +188,7 @@ public class Menu {
                             if (rodada ==3 && terceiroMaisVeloz ==2){
                                 System.out.println("Como você deseja atacar?");
                                 System.out.println("1 - Ataque Elemental\n2 - Ataque Fisico\n3 - Sair do Programa");
-                                int ataque = input.nextInt();
+                                ataque = input.nextInt();
                                 if(ataque == 1){
                                     System.out.println("WaveNerd efeutou um ataque elemental!");
                                     fator = acao.descobrirFatorDePoder(terra.getTipoElemento(), agua.getTipoElemento());
@@ -213,7 +213,7 @@ public class Menu {
                             if (rodada == 3 && terceiroMaisVeloz ==3 ){
                                 System.out.println("Como você deseja atacar?");
                                 System.out.println("1 - Ataque Elemental\n2 - Ataque Fisico");
-                                int ataque = input.nextInt();
+                                ataque = input.nextInt();
                                 if(ataque == 1){
                                     System.out.println("WaveNerd efeutou um ataque elemental!");
                                     fator = acao.descobrirFatorDePoder(terra.getTipoElemento(), fogo.getTipoElemento());
@@ -237,7 +237,7 @@ public class Menu {
                             if (rodada ==3 && terceiroMaisVeloz ==4){
                                 System.out.println("Como você deseja atacar?");
                                 System.out.println("1 - Ataque Elemental\n2 - Ataque Fisico");
-                                int ataque = input.nextInt();
+                                 ataque = input.nextInt();
                                 if(ataque == 1){
                                     System.out.println("WaveNerd efeutou um ataque elemental!");
                                     fator = acao.descobrirFatorDePoder(terra.getTipoElemento(), ar.getTipoElemento());
@@ -258,7 +258,7 @@ public class Menu {
                                     System.out.println("vida da ar pós ataque : " + agua.getVida());
                                 }
                             }
-                        } while ( rodada !=3);
+                        } while ( rodada !=3|| ataque ==3);
 
                     }
                     if(maisVeloz == 3){// o numero 3 é o id de elemento que esta com o nome tipoElemento
