@@ -9,7 +9,11 @@ public class Menu {
         int criatura;
         int gamePlay;
         int escolha;
+        int maisVeloz;
+        int segundoMaisVeloz;
+        int terceiroMaisVeloz;
         int rodada=0;
+        int sair;
         double fator;
         double dano;
         double statusVida;
@@ -29,7 +33,9 @@ public class Menu {
 
             if (gamePlay == 1){
                 if (criatura == 1){
-                    int maisVeloz = vereficar.verificadorDeVelocidade(agua, fogo, ar, terra, 3);
+                    maisVeloz = vereficar.verificadorDeVelocidade(agua, fogo, ar, terra, 3);
+                    segundoMaisVeloz = vereficar.verificadorDeVelocidade(agua, fogo, ar, terra, 2);
+                    terceiroMaisVeloz = vereficar.verificadorDeVelocidade(agua, fogo, ar, terra, 1);
                     if(maisVeloz == 2){// o numero 2 é o id de elemento que esta com o nome tipoElemento
                         do {
                             rodada++;
@@ -106,7 +112,153 @@ public class Menu {
                                     System.out.println("vida da ar pós ataque : " + agua.getVida());
                                 }
                             }
-                        } while (agua.getVida() > 0 || rodada !=3);
+                            if (rodada ==2 && segundoMaisVeloz ==2){
+                                System.out.println("Como você deseja atacar?");
+                                System.out.println("1 - Ataque Elemental\n2 - Ataque Fisico\n3 - Sair do Programa");
+                                int ataque = input.nextInt();
+                                if(ataque == 1){
+                                    System.out.println("WaveNerd efeutou um ataque elemental!");
+                                    fator = acao.descobrirFatorDePoder(terra.getTipoElemento(), agua.getTipoElemento());
+                                    dano = acao.calculoAtaqueElemental(terra.getPoder(), terra.getAtaque(), agua.getDefesa(), fator);
+                                    System.out.println("vida atual da agua:" + agua.getVida());
+                                    System.out.println("Terra atacou Água e o dano foi de :" + dano);
+                                    statusVida = agua.getVida() - dano;
+                                    agua.setVida((int) statusVida);
+                                    System.out.println("vida da Água pós ataque : " + agua.getVida());
+                                }
+                                if(ataque == 2){
+                                    System.out.println("WaveNerd efeutou um ataque fisico!");
+                                    fator = acao.descobrirFatorDePoder(terra.getTipoElemento(), agua.getTipoElemento());
+                                    dano = acao.calcaloAtaqueComun(terra.getPoder(), terra.getAtaque(), agua.getDefesa());
+                                    System.out.println("vida atual da agua:" + agua.getVida());
+                                    System.out.println("Terra atacou Água e o dano foi de :" + dano);
+                                    statusVida = agua.getVida() - dano;
+                                    agua.setVida((int) statusVida);
+                                    System.out.println("vida da Água pós ataque : " + agua.getVida());
+                                }
+                            }
+                            if (rodada == 2 && segundoMaisVeloz ==3 ){
+                                System.out.println("Como você deseja atacar?");
+                                System.out.println("1 - Ataque Elemental\n2 - Ataque Fisico");
+                                int ataque = input.nextInt();
+                                if(ataque == 1){
+                                    System.out.println("WaveNerd efeutou um ataque elemental!");
+                                    fator = acao.descobrirFatorDePoder(terra.getTipoElemento(), fogo.getTipoElemento());
+                                    dano = acao.calculoAtaqueElemental(terra.getPoder(), terra.getAtaque(), fogo.getDefesa(), fator);
+                                    System.out.println("vida atual da Fogo:" + fogo.getVida());
+                                    System.out.println("Terra atacou Fogo e o dano foi de :" + dano);
+                                    statusVida = fogo.getVida() - dano;
+                                    fogo.setVida((int) statusVida);
+                                    System.out.println("vida da fogo pós ataque : " + fogo.getVida());
+                                }
+                                if(ataque == 2){
+                                    System.out.println("WaveNerd efeutou um ataque fisico!");
+                                    dano = acao.calcaloAtaqueComun(terra.getPoder(), terra.getAtaque(), fogo.getDefesa());
+                                    System.out.println("vida atual da Fogo:" + fogo.getVida());
+                                    System.out.println("Terra atacou Fogo e o dano foi de :" + dano);
+                                    statusVida = fogo.getVida() - dano;
+                                    fogo.setVida((int) statusVida);
+                                    System.out.println("vida da Fogo pós ataque : " + fogo.getVida());
+                                }
+                            }
+                            if (rodada ==2 && segundoMaisVeloz ==4){
+                                System.out.println("Como você deseja atacar?");
+                                System.out.println("1 - Ataque Elemental\n2 - Ataque Fisico");
+                                int ataque = input.nextInt();
+                                if(ataque == 1){
+                                    System.out.println("WaveNerd efeutou um ataque elemental!");
+                                    fator = acao.descobrirFatorDePoder(terra.getTipoElemento(), ar.getTipoElemento());
+                                    dano = acao.calculoAtaqueElemental(terra.getPoder(), terra.getAtaque(), ar.getDefesa(), fator);
+                                    System.out.println("vida atual da ar:" + ar.getVida());
+                                    System.out.println("Terra atacou ar e o dano foi de :" + dano);
+                                    statusVida = ar.getVida() - dano;
+                                    ar.setVida((int) statusVida);
+                                    System.out.println("vida da ar pós ataque : " + ar.getVida());
+                                }
+                                if(ataque == 2){
+                                    System.out.println("WaveNerd efeutou um ataque fisico!");
+                                    dano = acao.calcaloAtaqueComun(terra.getPoder(), terra.getAtaque(), ar.getDefesa());
+                                    System.out.println("vida atual da ar:" + ar.getVida());
+                                    System.out.println("Terra atacou ar e o dano foi de :" + dano);
+                                    statusVida = ar.getVida() - dano;
+                                    ar.setVida((int) statusVida);
+                                    System.out.println("vida da ar pós ataque : " + agua.getVida());
+                                }
+                            }
+                            if (rodada ==3 && terceiroMaisVeloz ==2){
+                                System.out.println("Como você deseja atacar?");
+                                System.out.println("1 - Ataque Elemental\n2 - Ataque Fisico\n3 - Sair do Programa");
+                                int ataque = input.nextInt();
+                                if(ataque == 1){
+                                    System.out.println("WaveNerd efeutou um ataque elemental!");
+                                    fator = acao.descobrirFatorDePoder(terra.getTipoElemento(), agua.getTipoElemento());
+                                    dano = acao.calculoAtaqueElemental(terra.getPoder(), terra.getAtaque(), agua.getDefesa(), fator);
+                                    System.out.println("vida atual da agua:" + agua.getVida());
+                                    System.out.println("Terra atacou Água e o dano foi de :" + dano);
+                                    statusVida = agua.getVida() - dano;
+                                    agua.setVida((int) statusVida);
+                                    System.out.println("vida da Água pós ataque : " + agua.getVida());
+                                }
+                                if(ataque == 2){
+                                    System.out.println("WaveNerd efeutou um ataque fisico!");
+                                    fator = acao.descobrirFatorDePoder(terra.getTipoElemento(), agua.getTipoElemento());
+                                    dano = acao.calcaloAtaqueComun(terra.getPoder(), terra.getAtaque(), agua.getDefesa());
+                                    System.out.println("vida atual da agua:" + agua.getVida());
+                                    System.out.println("Terra atacou Água e o dano foi de :" + dano);
+                                    statusVida = agua.getVida() - dano;
+                                    agua.setVida((int) statusVida);
+                                    System.out.println("vida da Água pós ataque : " + agua.getVida());
+                                }
+                            }
+                            if (rodada == 3 && terceiroMaisVeloz ==3 ){
+                                System.out.println("Como você deseja atacar?");
+                                System.out.println("1 - Ataque Elemental\n2 - Ataque Fisico");
+                                int ataque = input.nextInt();
+                                if(ataque == 1){
+                                    System.out.println("WaveNerd efeutou um ataque elemental!");
+                                    fator = acao.descobrirFatorDePoder(terra.getTipoElemento(), fogo.getTipoElemento());
+                                    dano = acao.calculoAtaqueElemental(terra.getPoder(), terra.getAtaque(), fogo.getDefesa(), fator);
+                                    System.out.println("vida atual da Fogo:" + fogo.getVida());
+                                    System.out.println("Terra atacou Fogo e o dano foi de :" + dano);
+                                    statusVida = fogo.getVida() - dano;
+                                    fogo.setVida((int) statusVida);
+                                    System.out.println("vida da fogo pós ataque : " + fogo.getVida());
+                                }
+                                if(ataque == 2){
+                                    System.out.println("WaveNerd efeutou um ataque fisico!");
+                                    dano = acao.calcaloAtaqueComun(terra.getPoder(), terra.getAtaque(), fogo.getDefesa());
+                                    System.out.println("vida atual da Fogo:" + fogo.getVida());
+                                    System.out.println("Terra atacou Fogo e o dano foi de :" + dano);
+                                    statusVida = fogo.getVida() - dano;
+                                    fogo.setVida((int) statusVida);
+                                    System.out.println("vida da Fogo pós ataque : " + fogo.getVida());
+                                }
+                            }
+                            if (rodada ==3 && terceiroMaisVeloz ==4){
+                                System.out.println("Como você deseja atacar?");
+                                System.out.println("1 - Ataque Elemental\n2 - Ataque Fisico");
+                                int ataque = input.nextInt();
+                                if(ataque == 1){
+                                    System.out.println("WaveNerd efeutou um ataque elemental!");
+                                    fator = acao.descobrirFatorDePoder(terra.getTipoElemento(), ar.getTipoElemento());
+                                    dano = acao.calculoAtaqueElemental(terra.getPoder(), terra.getAtaque(), ar.getDefesa(), fator);
+                                    System.out.println("vida atual da ar:" + ar.getVida());
+                                    System.out.println("Terra atacou ar e o dano foi de :" + dano);
+                                    statusVida = ar.getVida() - dano;
+                                    ar.setVida((int) statusVida);
+                                    System.out.println("vida da ar pós ataque : " + ar.getVida());
+                                }
+                                if(ataque == 2){
+                                    System.out.println("WaveNerd efeutou um ataque fisico!");
+                                    dano = acao.calcaloAtaqueComun(terra.getPoder(), terra.getAtaque(), ar.getDefesa());
+                                    System.out.println("vida atual da ar:" + ar.getVida());
+                                    System.out.println("Terra atacou ar e o dano foi de :" + dano);
+                                    statusVida = ar.getVida() - dano;
+                                    ar.setVida((int) statusVida);
+                                    System.out.println("vida da ar pós ataque : " + agua.getVida());
+                                }
+                            }
+                        } while ( rodada !=3);
 
                     }
                     if(maisVeloz == 3){// o numero 3 é o id de elemento que esta com o nome tipoElemento
