@@ -63,6 +63,9 @@ public class Menu {
                                     agua.setVida((int) statusVida);
                                     System.out.println("vida da Água pós ataque : " + agua.getVida());
                                 }
+                                if (ataque ==3){
+                                    break;
+                                }
                             }
                             if (rodada == 1 && maisVeloz ==3 ){
                                 System.out.println("Como você deseja atacar?");
@@ -87,6 +90,9 @@ public class Menu {
                                     fogo.setVida((int) statusVida);
                                     System.out.println("vida da Fogo pós ataque : " + fogo.getVida());
                                 }
+                                if (ataque ==3){
+                                    break;
+                                }
                             }
                             if (rodada ==1 && maisVeloz ==4){
                                 System.out.println("Como você deseja atacar?");
@@ -110,6 +116,9 @@ public class Menu {
                                     statusVida = ar.getVida() - dano;
                                     ar.setVida((int) statusVida);
                                     System.out.println("vida da ar pós ataque : " + agua.getVida());
+                                }
+                                if (ataque ==3){
+                                    break;
                                 }
                             }
                             if (rodada ==2 && segundoMaisVeloz ==2){
@@ -136,6 +145,9 @@ public class Menu {
                                     agua.setVida((int) statusVida);
                                     System.out.println("vida da Água pós ataque : " + agua.getVida());
                                 }
+                                if (ataque ==3){
+                                    break;
+                                }
                             }
                             if (rodada == 2 && segundoMaisVeloz ==3 ){
                                 System.out.println("Como você deseja atacar?");
@@ -159,6 +171,9 @@ public class Menu {
                                     statusVida = fogo.getVida() - dano;
                                     fogo.setVida((int) statusVida);
                                     System.out.println("vida da Fogo pós ataque : " + fogo.getVida());
+                                }
+                                if (ataque ==3){
+                                    break;
                                 }
                             }
                             if (rodada ==2 && segundoMaisVeloz ==4){
@@ -184,6 +199,9 @@ public class Menu {
                                     ar.setVida((int) statusVida);
                                     System.out.println("vida da ar pós ataque : " + agua.getVida());
                                 }
+                                if (ataque ==3){
+                                    break;
+                                }
                             }
                             if (rodada ==3 && terceiroMaisVeloz ==2){
                                 System.out.println("Como você deseja atacar?");
@@ -199,6 +217,7 @@ public class Menu {
                                     agua.setVida((int) statusVida);
                                     System.out.println("vida da Água pós ataque : " + agua.getVida());
                                 }
+
                                 if(ataque == 2){
                                     System.out.println("WaveNerd efeutou um ataque fisico!");
                                     fator = acao.descobrirFatorDePoder(terra.getTipoElemento(), agua.getTipoElemento());
@@ -208,6 +227,9 @@ public class Menu {
                                     statusVida = agua.getVida() - dano;
                                     agua.setVida((int) statusVida);
                                     System.out.println("vida da Água pós ataque : " + agua.getVida());
+                                }
+                                if (ataque ==3){
+                                    break;
                                 }
                             }
                             if (rodada == 3 && terceiroMaisVeloz ==3 ){
@@ -233,6 +255,9 @@ public class Menu {
                                     fogo.setVida((int) statusVida);
                                     System.out.println("vida da Fogo pós ataque : " + fogo.getVida());
                                 }
+                                if (ataque ==3){
+                                    break;
+                                }
                             }
                             if (rodada ==3 && terceiroMaisVeloz ==4){
                                 System.out.println("Como você deseja atacar?");
@@ -257,17 +282,14 @@ public class Menu {
                                     ar.setVida((int) statusVida);
                                     System.out.println("vida da ar pós ataque : " + agua.getVida());
                                 }
+                                if (ataque ==3){
+                                    break;
+                                }
                             }
-                        } while ( rodada !=3|| ataque ==3);
+                        } while ( rodada !=3|| ataque !=3);
 
                     }
-                    if(maisVeloz == 3){// o numero 3 é o id de elemento que esta com o nome tipoElemento
 
-                    }
-                    if(maisVeloz == 4){// o numero 2 é o id de elemento que esta com o nome tipoElemento
-
-
-                    }
                 }
                 if (criatura == 2){
                     //codigo
