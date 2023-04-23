@@ -25,4 +25,8 @@ public class Agua extends Elementos{
     public double getTipoElemento() {
         return tipoElemento;
     }
+
+    public void setVelocidade(int velocidade) {
+        this.velocidade = velocidade;
+    }
 }

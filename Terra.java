@@ -27,4 +27,8 @@ Acao acao = new Acao();
         public void setVida(double vida) {
                 this.vida = vida;
         }
+
+        public void setVelocidade(int velocidade) {
+                this.velocidade = velocidade;
+        }
 }
