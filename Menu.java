@@ -7,17 +7,9 @@ public class Menu {
 
     public boolean menu(Agua agua, Fogo fogo, Terra terra, Ar ar) {
         int opcaoIniciarGame;
-        int criatura;
-        int gamePlay;
-        int escolha;
-        int maisVeloz;
-        int segundoMaisVeloz;
-        int terceiroMaisVeloz;
-        int rodada = 0;
-        int ataque = 0;
-        double fator;
-        double dano;
-        double statusVida;
+        int criatura,gamePlay,maisVeloz,segundoMaisVeloz,terceiroMaisVeloz;
+        int rodada =0,ataque = 0;
+        double dano,fator,statusVida;
         System.out.println("== MENU PRINCIPAL ==");
         System.out.println("1 - Novo jogo");
         System.out.println("2 - Sair");
