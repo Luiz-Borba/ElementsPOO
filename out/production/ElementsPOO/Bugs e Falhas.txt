@@ -7,3 +7,6 @@ de efetuar o proximo ataque porem não finaliza o programa
 3 - Ao escolher o elemento fogo alem do dialogo do game esstar incorreto esta puxando a vida errada de outro elemento e ao invez
 de mostrar a vida do oponente esta mostando sua propria vida tambem só esta executando duas batalhas e não apresenta o menu novamente
 e nem finaliza o programa
+
+4 - Ao executar o progama escolhando o elemento ar como atacante notamos que ele entra apenas em duas batalhas, apos a
+segunda batalha ele simplismente não faz nada, nao aparece menu e nem finaliza o game
