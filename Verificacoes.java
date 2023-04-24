@@ -1,7 +1,7 @@
 import java.util.Arrays;
 
 public class Verificacoes {
-    public int verificadorDeVelocidade(Agua agua,Fogo fogo,Ar ar,Terra terra,int verificador) {
+    public int verificadorDeVelocidade(Elementos agua,Elementos fogo,Elementos ar,Elementos terra,int verificador) {
         int[] velocidade = {agua.getVelocidade(), fogo.getVelocidade(), ar.getVelocidade(), terra.getVelocidade()};
         Arrays.sort(velocidade);
         int posicao = velocidade[verificador];

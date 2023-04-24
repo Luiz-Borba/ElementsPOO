@@ -29,4 +29,9 @@ public class Agua extends Elementos{
     public void setVelocidade(int velocidade) {
         this.velocidade = velocidade;
     }
+
+    @Override
+    public void setVida(double vida) {
+        super.setVida(vida);
+    }
 }

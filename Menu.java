@@ -5,7 +5,7 @@ public class Menu {
     Verificacoes vereficar = new Verificacoes();
     Acao acao = new Acao();
 
-    public boolean menu(Agua agua, Fogo fogo, Terra terra, Ar ar) {
+    public boolean menu(Elementos agua, Elementos fogo, Elementos terra, Elementos ar) {
         int opcaoIniciarGame;
         int criatura,gamePlay,maisVeloz,segundoMaisVeloz,terceiroMaisVeloz;
         int rodada =0,ataque = 0;

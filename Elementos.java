@@ -29,6 +29,11 @@ public abstract class Elementos {
                 return tipoElemento;
         }
 
+        public void setVida(double vida) {
+                this.vida = vida;
+        }
 
-
+        public int getVelocidade() {
+                return velocidade;
+        }
 }
