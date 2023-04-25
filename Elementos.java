@@ -1,39 +1,70 @@
-public abstract class Elementos {
-        Acao acao = new Acao();
-        private int tipoElemento=0;
-        private double poder = acao.valorAleatorio(10,30);
-        private double ataque=acao.valorAleatorio(5,15);
-        private double defesa = acao.valorAleatorio(5,15);
-        private  int velocidade = 0;
-        private double vida = 0;
+public class Elementos {
+    Acao acao = new Acao();
+    protected int tipoElemento;
+    protected double poder;
+    protected double ataque;
+    protected double defesa;
+    protected double velocidade;
+    protected double vida;
+    public boolean selecionado;
 
+    public Elementos(int tipoElemento) {
+        this.tipoElemento = tipoElemento;
+    }
 
-        public double getPoder() {
-                return poder;
-        }
+    public void resetarObjeto() {
+        this.poder = acao.valorAleatorio(Jogo.PODER_MINIMO, Jogo.PODER_MAXIMO);
+        this.ataque = acao.valorAleatorio(Jogo.ATAQUE_MINIMO, Jogo.ATAQUE_MAXIMO);
+        this.defesa = acao.valorAleatorio(Jogo.DEFESA_MINIMO, Jogo.DEFESA_MAXIMO);
+        this.velocidade = acao.valorAleatorio(Jogo.VELOCIDADE_MINIMO, Jogo.VELOCIDADE_MAXIMO);
+        this.vida = acao.valorAleatorio(Jogo.VIDA_MINIMO, Jogo.VIDA_MAXIMO);
+    }
 
+    public int getTipoElemento() {
+        return tipoElemento;
+    }
 
-        public double getVida() {
-                return vida;
-        }
+    public void setTipoElemento(int tipoElemento) {
+        this.tipoElemento = tipoElemento;
+    }
 
-        public double getDefesa() {
-                return defesa;
-        }
+    public double getPoder() {
+        return poder;
+    }
 
-        public double getAtaque() {
-                return ataque;
-        }
+    public void setPoder(double poder) {
+        this.poder = poder;
+    }
 
-        public double getTipoElemento() {
-                return tipoElemento;
-        }
+    public double getAtaque() {
+        return ataque;
+    }
 
-        public void setVida(double vida) {
-                this.vida = vida;
-        }
+    public void setAtaque(double ataque) {
+        this.ataque = ataque;
+    }
 
-        public int getVelocidade() {
-                return velocidade;
-        }
+    public double getDefesa() {
+        return defesa;
+    }
+
+    public void setDefesa(double defesa) {
+        this.defesa = defesa;
+    }
+
+    public double getVelocidade() {
+        return velocidade;
+    }
+
+    public void setVelocidade(double velocidade) {
+        this.velocidade = velocidade;
+    }
+
+    public double getVida() {
+        return vida;
+    }
+
+    public void setVida(double vida) {
+        this.vida = vida;
+    }
 }
