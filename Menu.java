@@ -15,6 +15,7 @@ public class Menu {
     }
 
     public void playGame(){
+        int vida =1;
 
         int jogador = menuEscolhaPersonagem();
 
@@ -34,6 +35,7 @@ public class Menu {
                 if (id == 4) {
                   menuRodada(terra, ar);
                 }
+                 vida = terra.getVida();
             }
             if (jogador == 2) {
                 verificador = agua.getVida();
@@ -48,6 +50,8 @@ public class Menu {
                 if (id == 4) {
                     menuRodada(agua, ar);
                 }
+                vida = agua.getVida();
+
             }
             if (jogador == 3) {
                 verificador = fogo.getVida();
@@ -62,6 +66,7 @@ public class Menu {
                 if (id == 1) {
                     menuRodada(fogo, terra);
                 }
+                vida = fogo.getVida();
             }
 
             if (jogador == 4) {
@@ -77,9 +82,10 @@ public class Menu {
                     if (id == 1) {
                         menuRodada(ar, agua);
                     }
+                vida = ar.getVida();
                 }
 
-        } while (contadorBatalha != 3 && verificador != 0);
+        } while (contadorBatalha != 3 && verificador != 0||vida>0);
 
     }
 
