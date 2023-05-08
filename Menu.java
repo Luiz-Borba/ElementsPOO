@@ -15,15 +15,17 @@ public class Menu {
         System.out.println(terra.getVelocidade());
         System.out.println(ar.getVelocidade());
     }
+    public void proximaBatalha(){
+
+    }
 
     public void playGame(){
 
         int jogador = menuEscolhaPersonagem();
         int contadorBatalha = 0;
-        int verificador = 1;
+
         do {
             if (jogador == 1) {
-                verificador = terra.getVida();
                 contadorBatalha++;
                 int id = batalhaDaVez(contadorBatalha-1, agua, fogo, ar);
                 if (id == 2) {
@@ -44,7 +46,6 @@ public class Menu {
                 }
             }
             if (jogador == 2) {
-                verificador = agua.getVida();
                 contadorBatalha++;
                 int id = batalhaDaVez(contadorBatalha-1, terra, fogo, ar);
                 if (id == 1) {
@@ -65,7 +66,6 @@ public class Menu {
                 }
             }
             if (jogador == 3) {
-                verificador = fogo.getVida();
                 contadorBatalha++;
                 int id = batalhaDaVez(contadorBatalha-1, terra, agua, ar);
                 if (id == 2) {
@@ -87,7 +87,6 @@ public class Menu {
 
             }
             if (jogador == 4) {
-                    verificador = ar.getVida();
                     contadorBatalha++;
                     int id = batalhaDaVez(contadorBatalha-1, terra, fogo, agua);
                     if (id == 2) {
@@ -111,12 +110,8 @@ public class Menu {
                         }while (ar.getVida()>0 ||agua.getVida()>0);
                     }
                 }
-
-        } while (contadorBatalha != 3 && verificador != 0);
-
+        } while (contadorBatalha != 3 );
     }
-
-
     public int menuEscolhaPersonagem() {
 
         int personagem;
@@ -231,7 +226,6 @@ public class Menu {
        if (criaturaAtacante.getVida()<=0&&criaturaDefensora.getVida()>0){
            System.out.println("Você perdeu");
        }
-
     }
     public int  batalhaDaVez(int contador,Criatura criatura1,Criatura criatura2,Criatura criatura3) {
         if (contador == 1) {
