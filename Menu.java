@@ -15,20 +15,7 @@ public class Menu {
         System.out.println(terra.getVelocidade());
         System.out.println(ar.getVelocidade());
     }
-public void validadorVida(Criatura criatura1,Criatura criatura2){
-    if (criatura1.getVida()<=0){
 
-        System.out.println("Você perdeu sou otario");
-        System.exit(0);
-
-    }
-    if (criatura2.getVida()<=0){
-        System.out.println("Parabens você ganhou!");
-        System.out.println(criatura2.getVida());
-
-    }
-
-}
     public void playGame(){
         int vida =1;
 
@@ -125,21 +112,21 @@ public void validadorVida(Criatura criatura1,Criatura criatura2){
                     if (id == 2) {
                         do {
                             menuRodada(ar, terra);
-                            validadorVida(ar,terra);
+
                         }while (ar.getVida()>0 ||terra.getVida()>0);
                     }
                     if (id == 3) {
                         menuRodada(ar, fogo);
                         do {
                             menuRodada(ar, fogo);
-                            validadorVida(ar,fogo);
+
                         }while (ar.getVida()>0 ||fogo.getVida()>0);
                     }
                     if (id == 1) {
                         menuRodada(ar, agua);
                         do {
                             menuRodada(ar, agua);
-                            validadorVida(ar,agua);
+
                         }while (ar.getVida()>0 ||agua.getVida()>0);
                     }
                 vida = ar.getVida();
@@ -198,12 +185,12 @@ public void validadorVida(Criatura criatura1,Criatura criatura2){
                 double dano = acao.ataqueFisico(criaturaAtacante.getAtaque(), criaturaAtacante.getPoder(), criaturaDefensora.getDefesa());
                 if (dano > 0) {
 
-                    System.out.println("vida atual da Criatura " +criaturaDefensora.getNome()+" " + criaturaDefensora.getVida());
+                    System.out.println("vida atual da sua criatura" +criaturaDefensora.getNome()+" " + criaturaDefensora.getVida());
                     System.out.println("A criatura "  +criaturaAtacante.getNome()+" causou o dano de : " + dano);
                     int danoCausado = (int) (criaturaDefensora.getVida() - dano);
                     criaturaDefensora.setVida(danoCausado);
                     System.out.println("vida atual da Criatura " +criaturaDefensora.getNome()+" Apos ataque é de : " + criaturaDefensora.getVida());
-                    System.out.println("\n--------------------------CONTRA ATAQUE-------------------------\n");
+
 
                     if (contrataAtaque ==1){
                         System.out.println("\n---------------------------CONTRA ATAQUE--------------------------------------\n");
@@ -229,7 +216,6 @@ public void validadorVida(Criatura criatura1,Criatura criatura2){
                         System.out.println("\n---------------------------FIM DA RODADA--------------------------------------\n");
 
                     }
-                    validadorVida(criaturaAtacante,criaturaDefensora);
 
                 }
             }
@@ -237,7 +223,7 @@ public void validadorVida(Criatura criatura1,Criatura criatura2){
                 double fator = acao.calculoFatorPoder(criaturaAtacante.getId(),criaturaDefensora.getId());
                 double dano = acao.ataqueElemental(criaturaAtacante.getPoder(),criaturaAtacante.getAtaque(), criaturaDefensora.getDefesa(),fator);
                 if (dano > 0) {
-                    System.out.println("\n---------------------------PRIMEIRO ATAQUE-------------------------------------\n");
+                    System.out.println("\n--------------------------- ATAQUE-----------------------------------------------\n");
                     System.out.println("vida atual da Criatura " +criaturaDefensora.getNome()+" " + criaturaDefensora.getVida());
                     System.out.println("A criatura "  +criaturaAtacante.getNome()+" causou o dano elemental de : " + dano);
                     int danoCausado = (int) (criaturaDefensora.getVida() - dano);
@@ -253,7 +239,6 @@ public void validadorVida(Criatura criatura1,Criatura criatura2){
                         System.out.println("Sua vida após ataque é de : " + criaturaAtacante.getVida());
                         System.out.println("\n---------------------------FIM DA RODADA--------------------------------------\n");
                     }
-                    validadorVida(criaturaAtacante,criaturaDefensora);
 
                 }
 
