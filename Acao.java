@@ -4,9 +4,6 @@ import java.util.*;
 public class Acao {
     Random gerador = new Random();
 
-    int contador = 0;
-
-
     public int geradorNumeroAleatorio(int menorValor, int maiorValor) {
         return gerador.nextInt(maiorValor - menorValor + 1) + menorValor;
     }
