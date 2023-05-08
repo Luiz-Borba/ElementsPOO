@@ -243,7 +243,6 @@ public void validadorVida(Criatura criatura1,Criatura criatura2){
                     int danoCausado = (int) (criaturaDefensora.getVida() - dano);
                     criaturaDefensora.setVida(danoCausado);
                     System.out.println("vida atual da Criatura " +criaturaDefensora.getNome()+" Apos ataque é de : " + criaturaDefensora.getVida());
-                    if (contrataAtaque ==1){
                         System.out.println("\n---------------------------CONTRA ATAQUE--------------------------------------\n");
                         System.out.println("A Criatura "+ criaturaDefensora.getNome()+ " atacou você");
                         System.out.println("a sua vida atual é de  " + criaturaAtacante.getVida());
@@ -260,7 +259,6 @@ public void validadorVida(Criatura criatura1,Criatura criatura2){
 
             }
 
-        }
     }
     public int  batalhaDaVez(int contador,Criatura criatura1,Criatura criatura2,Criatura criatura3) {
         if (contador == 1) {
