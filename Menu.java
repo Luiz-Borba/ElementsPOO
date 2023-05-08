@@ -17,10 +17,8 @@ public class Menu {
     }
 
     public void playGame(){
-        int vida =1;
 
         int jogador = menuEscolhaPersonagem();
-
         int contadorBatalha = 0;
         int verificador = 1;
         do {
@@ -32,56 +30,39 @@ public class Menu {
                         do {
                             menuRodada(terra, agua);
                         }while (terra.getVida()>0||agua.getVida()>0);
-
                 }
                 if (id == 3) {
-
-
                         do {
                             menuRodada(terra, fogo);
-
                         }while (terra.getVida()>0 ||fogo.getVida()>0);
-
-
                 }
                 if (id == 4) {
                   menuRodada(terra, ar);
                         do {
                             menuRodada(terra, ar);
-
                         }while (terra.getVida()>0 ||ar.getVida()>0);
                 }
-
             }
             if (jogador == 2) {
                 verificador = agua.getVida();
                 contadorBatalha++;
                 int id = batalhaDaVez(contadorBatalha-1, terra, fogo, ar);
                 if (id == 1) {
-
                         do {
                             menuRodada(agua, terra);
                         }while (agua.getVida()>0 ||terra.getVida()>0);
-
                 }
                 if (id == 3) {
-
-
-
                         do {
                             menuRodada(agua, fogo);
                         }while (agua.getVida()>0 ||fogo.getVida()>0);
                 }
                 if (id == 4) {
-
-
                         do {
                             menuRodada(agua, ar);
                         }while (agua.getVida()>0 ||ar.getVida()>0);
 
                 }
-                vida = agua.getVida();
-
             }
             if (jogador == 3) {
                 verificador = fogo.getVida();
@@ -103,7 +84,7 @@ public class Menu {
                         menuRodada(fogo, terra);
                     }while (fogo.getVida()>0 ||terra.getVida()>0);
                 }
-                vida = fogo.getVida();
+
             }
             if (jogador == 4) {
                     verificador = ar.getVida();
@@ -129,7 +110,6 @@ public class Menu {
 
                         }while (ar.getVida()>0 ||agua.getVida()>0);
                     }
-                vida = ar.getVida();
                 }
 
         } while (contadorBatalha != 3 && verificador != 0);
@@ -164,85 +144,93 @@ public class Menu {
         return personagem;
     }
     public void  menuRodada(Criatura criaturaAtacante,Criatura criaturaDefensora) {
-        int opcao;
-        System.out.println("1 - Sair");
-        System.out.println("2 - Atacar");
-        opcao = input.nextInt();
-        if (opcao == 1) {
-            System.out.println("Você esta saindo do game");
-            System.exit(0);
-            return;
+       if(criaturaAtacante.getVida()>0&&criaturaDefensora.getVida()>0){
+           int opcao;
+           System.out.println("1 - Sair");
+           System.out.println("2 - Atacar");
+           opcao = input.nextInt();
+           if (opcao == 1) {
+               System.out.println("Você esta saindo do game");
+               System.exit(0);
+               return;
 
-        }
-        if (opcao == 2) {
-            int tipoAtaque;
-            System.out.println("1 - Deseja efetuar um ataque Fisico?");
-            System.out.println("2 - Deseja efetuar um ataque Elemental?");
-            tipoAtaque = input.nextInt();
-            int contrataAtaque=acao.geradorNumeroAleatorio(1,2);
-            if (tipoAtaque == 1) {
-                double fator = acao.calculoFatorPoder(criaturaAtacante.getId(),criaturaDefensora.getId());
-                double dano = acao.ataqueFisico(criaturaAtacante.getAtaque(), criaturaAtacante.getPoder(), criaturaDefensora.getDefesa());
-                if (dano > 0) {
+           }
+           if (opcao == 2) {
+               int tipoAtaque;
+               System.out.println("1 - Deseja efetuar um ataque Fisico?");
+               System.out.println("2 - Deseja efetuar um ataque Elemental?");
+               tipoAtaque = input.nextInt();
+               int contrataAtaque=acao.geradorNumeroAleatorio(1,2);
+               if (tipoAtaque == 1) {
+                   double fator = acao.calculoFatorPoder(criaturaAtacante.getId(),criaturaDefensora.getId());
+                   double dano = acao.ataqueFisico(criaturaAtacante.getAtaque(), criaturaAtacante.getPoder(), criaturaDefensora.getDefesa());
+                   if (dano > 0) {
 
-                    System.out.println("vida atual da sua criatura" +criaturaDefensora.getNome()+" " + criaturaDefensora.getVida());
-                    System.out.println("A criatura "  +criaturaAtacante.getNome()+" causou o dano de : " + dano);
-                    int danoCausado = (int) (criaturaDefensora.getVida() - dano);
-                    criaturaDefensora.setVida(danoCausado);
-                    System.out.println("vida atual da Criatura " +criaturaDefensora.getNome()+" Apos ataque é de : " + criaturaDefensora.getVida());
+                       System.out.println("vida atual da sua criatura" +criaturaDefensora.getNome()+" " + criaturaDefensora.getVida());
+                       System.out.println("A criatura "  +criaturaAtacante.getNome()+" causou o dano de : " + dano);
+                       int danoCausado = (int) (criaturaDefensora.getVida() - dano);
+                       criaturaDefensora.setVida(danoCausado);
+                       System.out.println("vida atual da Criatura " +criaturaDefensora.getNome()+" Apos ataque é de : " + criaturaDefensora.getVida());
 
 
-                    if (contrataAtaque ==1){
-                        System.out.println("\n---------------------------CONTRA ATAQUE--------------------------------------\n");
-                        System.out.println("A Criatura "+ criaturaDefensora.getNome()+ " atacou você");
-                        System.out.println("a sua vida atual é de  " + criaturaAtacante.getVida());
-                        double danoContraAtaque = acao.ataqueFisico(criaturaDefensora.getAtaque(), criaturaDefensora.getPoder(), criaturaAtacante.getDefesa());
-                        System.out.println( criaturaDefensora.getNome() +" causou o dano de : " + danoContraAtaque);
-                        int danoCausadoContraAtaque = (int) (criaturaAtacante.getVida() - danoContraAtaque);
-                        criaturaAtacante.setVida(danoCausadoContraAtaque);
-                        System.out.println("Sua vida após ataque é de : " + criaturaAtacante.getVida());
-                        System.out.println("\n---------------------------FIM DA RODADA--------------------------------------\n");
-                    }
-                    if (contrataAtaque ==2){
-                        System.out.println("\n---------------------------CONTRA ATAQUE--------------------------------------\n");
-                        System.out.println("A Criatura "+ criaturaDefensora.getNome()+ " atacou você");
-                        System.out.println("a sua vida atual é de  " + criaturaAtacante.getVida());
-                        int danoContraAtaque = (int) acao.ataqueElemental(criaturaDefensora.getPoder(),criaturaDefensora.getAtaque(), criaturaAtacante.getDefesa(),fator);
-                        System.out.println(criaturaDefensora.getNome()+ " causou o dano elemental de de : " + danoContraAtaque);
-                        int danoCausadoContraAtaque = (int) (criaturaAtacante.getVida() - danoContraAtaque);
-                        criaturaAtacante.setVida(danoCausadoContraAtaque);
-                        System.out.println("A sua vida após ataque é de : " + criaturaAtacante.getVida());
-                        System.out.println("vida atual da Criatura " +criaturaDefensora.getNome()+" Apos ataque é de : " + criaturaDefensora.getVida());
-                        System.out.println("\n---------------------------FIM DA RODADA--------------------------------------\n");
+                       if (contrataAtaque ==1){
+                           System.out.println("\n---------------------------CONTRA ATAQUE--------------------------------------\n");
+                           System.out.println("A Criatura "+ criaturaDefensora.getNome()+ " atacou você");
+                           System.out.println("a sua vida atual é de  " + criaturaAtacante.getVida());
+                           double danoContraAtaque = acao.ataqueFisico(criaturaDefensora.getAtaque(), criaturaDefensora.getPoder(), criaturaAtacante.getDefesa());
+                           System.out.println( criaturaDefensora.getNome() +" causou o dano de : " + danoContraAtaque);
+                           int danoCausadoContraAtaque = (int) (criaturaAtacante.getVida() - danoContraAtaque);
+                           criaturaAtacante.setVida(danoCausadoContraAtaque);
+                           System.out.println("Sua vida após ataque é de : " + criaturaAtacante.getVida());
+                           System.out.println("\n---------------------------FIM DA RODADA--------------------------------------\n");
+                       }
+                       if (contrataAtaque ==2){
+                           System.out.println("\n---------------------------CONTRA ATAQUE--------------------------------------\n");
+                           System.out.println("A Criatura "+ criaturaDefensora.getNome()+ " atacou você");
+                           System.out.println("a sua vida atual é de  " + criaturaAtacante.getVida());
+                           int danoContraAtaque = (int) acao.ataqueElemental(criaturaDefensora.getPoder(),criaturaDefensora.getAtaque(), criaturaAtacante.getDefesa(),fator);
+                           System.out.println(criaturaDefensora.getNome()+ " causou o dano elemental de de : " + danoContraAtaque);
+                           int danoCausadoContraAtaque = (int) (criaturaAtacante.getVida() - danoContraAtaque);
+                           criaturaAtacante.setVida(danoCausadoContraAtaque);
+                           System.out.println("A sua vida após ataque é de : " + criaturaAtacante.getVida());
+                           System.out.println("vida atual da Criatura " +criaturaDefensora.getNome()+" Apos ataque é de : " + criaturaDefensora.getVida());
+                           System.out.println("\n---------------------------FIM DA RODADA--------------------------------------\n");
 
-                    }
+                       }
 
-                }
-            }
-            if (tipoAtaque == 2){
-                double fator = acao.calculoFatorPoder(criaturaAtacante.getId(),criaturaDefensora.getId());
-                double dano = acao.ataqueElemental(criaturaAtacante.getPoder(),criaturaAtacante.getAtaque(), criaturaDefensora.getDefesa(),fator);
-                if (dano > 0) {
-                    System.out.println("\n--------------------------- ATAQUE-----------------------------------------------\n");
-                    System.out.println("vida atual da Criatura " +criaturaDefensora.getNome()+" " + criaturaDefensora.getVida());
-                    System.out.println("A criatura "  +criaturaAtacante.getNome()+" causou o dano elemental de : " + dano);
-                    int danoCausado = (int) (criaturaDefensora.getVida() - dano);
-                    criaturaDefensora.setVida(danoCausado);
-                    System.out.println("vida atual da Criatura " +criaturaDefensora.getNome()+" Apos ataque é de : " + criaturaDefensora.getVida());
-                        System.out.println("\n---------------------------CONTRA ATAQUE--------------------------------------\n");
-                        System.out.println("A Criatura "+ criaturaDefensora.getNome()+ " atacou você");
-                        System.out.println("a sua vida atual é de  " + criaturaAtacante.getVida());
-                        double danoContraAtaque = acao.ataqueFisico(criaturaDefensora.getAtaque(), criaturaDefensora.getPoder(), criaturaAtacante.getDefesa());
-                        System.out.println( criaturaDefensora.getNome() +" causou o dano de : " + danoContraAtaque);
-                        int danoCausadoContraAtaque = (int) (criaturaAtacante.getVida() - danoContraAtaque);
-                        criaturaAtacante.setVida(danoCausadoContraAtaque);
-                        System.out.println("Sua vida após ataque é de : " + criaturaAtacante.getVida());
-                        System.out.println("\n---------------------------FIM DA RODADA--------------------------------------\n");
-                    }
+                   }
+               }
+               if (tipoAtaque == 2){
+                   double fator = acao.calculoFatorPoder(criaturaAtacante.getId(),criaturaDefensora.getId());
+                   double dano = acao.ataqueElemental(criaturaAtacante.getPoder(),criaturaAtacante.getAtaque(), criaturaDefensora.getDefesa(),fator);
+                   if (dano > 0) {
+                       System.out.println("\n--------------------------- ATAQUE-----------------------------------------------\n");
+                       System.out.println("vida atual da Criatura " +criaturaDefensora.getNome()+" " + criaturaDefensora.getVida());
+                       System.out.println("A criatura "  +criaturaAtacante.getNome()+" causou o dano elemental de : " + dano);
+                       int danoCausado = (int) (criaturaDefensora.getVida() - dano);
+                       criaturaDefensora.setVida(danoCausado);
+                       System.out.println("vida atual da Criatura " +criaturaDefensora.getNome()+" Apos ataque é de : " + criaturaDefensora.getVida());
+                       System.out.println("\n---------------------------CONTRA ATAQUE--------------------------------------\n");
+                       System.out.println("A Criatura "+ criaturaDefensora.getNome()+ " atacou você");
+                       System.out.println("a sua vida atual é de  " + criaturaAtacante.getVida());
+                       double danoContraAtaque = acao.ataqueFisico(criaturaDefensora.getAtaque(), criaturaDefensora.getPoder(), criaturaAtacante.getDefesa());
+                       System.out.println( criaturaDefensora.getNome() +" causou o dano de : " + danoContraAtaque);
+                       int danoCausadoContraAtaque = (int) (criaturaAtacante.getVida() - danoContraAtaque);
+                       criaturaAtacante.setVida(danoCausadoContraAtaque);
+                       System.out.println("Sua vida após ataque é de : " + criaturaAtacante.getVida());
+                       System.out.println("\n---------------------------FIM DA RODADA--------------------------------------\n");
+                   }
 
-                }
+               }
 
-            }
+           }
+       }
+       if (criaturaAtacante.getVida()>0&&criaturaDefensora.getVida()<=0){
+           System.out.println("VocÊ ganhou");
+       }
+       if (criaturaAtacante.getVida()<=0&&criaturaDefensora.getVida()>0){
+           System.out.println("Você perdeu");
+       }
 
     }
     public int  batalhaDaVez(int contador,Criatura criatura1,Criatura criatura2,Criatura criatura3) {
