@@ -1,69 +1,3 @@
-//import java.lang.reflect.Array;
-//import java.util.*;
-//
-//public class Acao {
-//    Random gerador = new Random();
-//
-//    public int geradorNumeroAleatorio(int menorValor, int maiorValor) {
-//        return gerador.nextInt(maiorValor - menorValor + 1) + menorValor;
-//    }
-//    int[] velocidadeGerada = new int[4];
-//    int contadorVelocidade = 0;
-//
-//    public int gerarVelocidadeAleatoria(int menorValor, int maiorValor) {
-//        int gerado;
-//        boolean repetido;
-//        do {
-//            gerado = gerador.nextInt(maiorValor - menorValor + 1) + menorValor;
-//            repetido = false;
-//            for (int i = 0; i < contadorVelocidade; i++) {
-//                if (velocidadeGerada[i] == gerado) {
-//                    repetido = true;
-//                    break;
-//                }
-//            }
-//        } while (repetido);
-//        velocidadeGerada[contadorVelocidade++] = gerado;
-//        return gerado;
-//    }
-//
-//    public int verificadorDeVelocidade(int inimigo1, int inimigo3, int inimigo2,int posicao) {
-//        int[] velocidade = new int[3];
-//        velocidade[0] = inimigo1;
-//        velocidade[1]=inimigo2;
-//        velocidade[2]=inimigo3;
-//        Arrays.sort(velocidade);
-//
-//
-//        return velocidade[posicao];
-//    }
-//    public  double calculoFatorPoder(int id1, int id2) {
-//        if (id1 == id2) {
-//            return 0.5;
-//        } else if ((id1 == 1 && id2 == 2) || (id1 == 2 && id2 == 1)
-//                || (id1 == 1 && id2 == 3) || (id1 == 3 && id2 == 1)
-//                || (id1 == 1 && id2 == 4) || (id1 == 4 && id2 == 1)
-//                || (id1 == 2 && id2 == 4) || (id1 == 4 && id2 == 2)
-//                || (id1 == 3 && id2 == 2) || (id1 == 2 && id2 == 3)
-//                || (id1 == 3 && id2 == 4) || (id1 == 4 && id2 == 3)) {
-//            return 1.0;
-//        } else if ((id1 == 1 && id2 == 2) || (id1 == 2 && id2 == 3)
-//                || (id1 == 3 && id2 == 4) || (id1 == 4 && id2 == 1)) {
-//            return 2.0;
-//        }
-//        return 0;
-//    }
-//    public int ataqueFisico(int poderAtacante,int ataqueAtacante,int defesaDefensor){
-//            return (poderAtacante*ataqueAtacante)/defesaDefensor;
-//    }
-//    public double ataqueElemental(int poderAtacante,int ataqueAtacante,int defesaDefensor,double fator){
-//        return (poderAtacante*ataqueAtacante)/defesaDefensor*fator;
-//
-//    }
-//
-//}
-//
-
 import java.util.Random;
 
 public class Acao {
@@ -71,7 +5,8 @@ public class Acao {
         int danoFisico = (criaturaSelecionada.getPdr() * criaturaSelecionada.getAtq() / criaturaOponente.getDef());
         criaturaSelecionada.receberDano(danoFisico);
 
-        System.out.println("Você" + criaturaSelecionada.getNome() + " causou " + danoFisico + " de dano com ataque fisico em " + criaturaOponente.getNome() + ".");
+        System.out.println("\nVoce " + criaturaSelecionada.getNome() + " causou " + danoFisico
+                + " de dano com ataque fisico em " + criaturaOponente.getNome() + ".");
         System.out.println("Vida de " + criaturaSelecionada.getNome() + ": " + criaturaSelecionada.getPvd());
         System.out.println("Vida de " + criaturaOponente.getNome() + ": " + criaturaOponente.getPvd());
         return danoFisico;
@@ -83,19 +18,19 @@ public class Acao {
 
         if (tipoSelecionada == tipoOponente) {
             return 0.5;
-        } else if ((tipoSelecionada == tipoSelecionada.TERRA && tipoOponente == tipoOponente.FOGO)
-                || (tipoSelecionada == tipoSelecionada.TERRA && tipoOponente == tipoOponente.AR)
-                || (tipoSelecionada == tipoSelecionada.AGUA && tipoOponente == tipoOponente.TERRA)
-                || (tipoSelecionada == tipoSelecionada.AGUA && tipoOponente == tipoOponente.AR)
-                || (tipoSelecionada == tipoSelecionada.FOGO && tipoOponente == tipoOponente.TERRA)
-                || (tipoSelecionada == tipoSelecionada.FOGO && tipoOponente == tipoOponente.AGUA)
-                || (tipoSelecionada == tipoSelecionada.AR && tipoOponente == tipoOponente.AGUA)
-                || (tipoSelecionada == tipoSelecionada.AR && tipoOponente == tipoOponente.FOGO)){
+        } else if ((tipoSelecionada == Criatura.TipoCriatura.TERRA && tipoOponente == Criatura.TipoCriatura.FOGO)
+                || (tipoSelecionada == Criatura.TipoCriatura.TERRA && tipoOponente == Criatura.TipoCriatura.AR)
+                || (tipoSelecionada == Criatura.TipoCriatura.AGUA && tipoOponente == Criatura.TipoCriatura.TERRA)
+                || (tipoSelecionada == Criatura.TipoCriatura.AGUA && tipoOponente == Criatura.TipoCriatura.AR)
+                || (tipoSelecionada == Criatura.TipoCriatura.FOGO && tipoOponente == Criatura.TipoCriatura.TERRA)
+                || (tipoSelecionada == Criatura.TipoCriatura.FOGO && tipoOponente == Criatura.TipoCriatura.AGUA)
+                || (tipoSelecionada == Criatura.TipoCriatura.AR && tipoOponente == Criatura.TipoCriatura.AGUA)
+                || (tipoSelecionada == Criatura.TipoCriatura.AR && tipoOponente == Criatura.TipoCriatura.FOGO)) {
             return 1.0;
-        } else if ((tipoSelecionada == tipoSelecionada.TERRA && tipoOponente == tipoOponente.AGUA)
-                || (tipoSelecionada == tipoSelecionada.AGUA && tipoOponente == tipoOponente.FOGO)
-                || (tipoSelecionada == tipoSelecionada.FOGO && tipoOponente == tipoOponente.AR)
-                || (tipoSelecionada == tipoSelecionada.AR && tipoOponente == tipoOponente.TERRA)) {
+        } else if ((tipoSelecionada == Criatura.TipoCriatura.TERRA && tipoOponente == Criatura.TipoCriatura.AGUA)
+                || (tipoSelecionada == Criatura.TipoCriatura.AGUA && tipoOponente == Criatura.TipoCriatura.FOGO)
+                || (tipoSelecionada == Criatura.TipoCriatura.FOGO && tipoOponente == Criatura.TipoCriatura.AR)
+                || (tipoSelecionada == Criatura.TipoCriatura.AR && tipoOponente == Criatura.TipoCriatura.TERRA)) {
             return 2.0;
         }
         return 0.0;
@@ -106,7 +41,8 @@ public class Acao {
         int danoElemental = (int) (criaturaSelecionada.getAtq() * fatorPoder);
         criaturaOponente.receberDano(danoElemental);
 
-        System.out.println("Você" + criaturaSelecionada.getNome() + " causou " + danoElemental + " de dano com ataque elemental em " + criaturaOponente.getNome() + ".");
+        System.out.println("\nVoce " + criaturaSelecionada.getNome() + " causou " + danoElemental
+                + " de dano com ataque elemental em " + criaturaOponente.getNome() + ".");
         System.out.println("Vida de " + criaturaSelecionada.getNome() + ": " + criaturaSelecionada.getPvd());
         System.out.println("Vida de " + criaturaOponente.getNome() + ": " + criaturaOponente.getPvd());
 
@@ -119,9 +55,11 @@ public class Acao {
 
         switch (acaoOponente) {
             case 1:
-                int danoFisicoOponente = (criaturaOponente.getPdr() * criaturaOponente.getAtq() / criaturaSelecionada.getDef());
+                int danoFisicoOponente = (criaturaOponente.getPdr() * criaturaOponente.getAtq()
+                        / criaturaSelecionada.getDef());
                 criaturaOponente.receberDano(danoFisicoOponente);
-                System.out.println(criaturaSelecionada.getNome() + " causou " + danoFisicoOponente + " de dano com ataque fisico em " + criaturaOponente.getNome() + ".");
+                System.out.println(criaturaSelecionada.getNome() + " causou " + danoFisicoOponente
+                        + " de dano com ataque fisico em " + criaturaOponente.getNome() + ".");
                 System.out.println("Vida de " + criaturaOponente.getNome() + ": " + criaturaOponente.getPvd());
                 System.out.println("Vida de " + criaturaSelecionada.getNome() + ": " + criaturaSelecionada.getPvd());
                 return danoFisicoOponente;
@@ -130,7 +68,8 @@ public class Acao {
                 int danoElementalOponente = (int) (criaturaOponente.getAtq() * fatorPoder);
                 criaturaSelecionada.receberDano(danoElementalOponente);
 
-                System.out.println("Você" + criaturaOponente.getNome() + " causou " + danoElementalOponente + " de dano com ataque elemental em " + criaturaSelecionada.getNome() + ".");
+                System.out.println("\nVoce " + criaturaOponente.getNome() + " causou " + danoElementalOponente
+                        + " de dano com ataque elemental em " + criaturaSelecionada.getNome() + ".");
                 System.out.println("Vida de " + criaturaOponente.getNome() + ": " + criaturaOponente.getPvd());
                 System.out.println("Vida de " + criaturaSelecionada.getNome() + ": " + criaturaSelecionada.getPvd());
 

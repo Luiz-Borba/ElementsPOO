@@ -1,76 +1,7 @@
-//public abstract class Criatura extends Acao{
-//    private String nome;
-//    private int poder;
-//    private int ataque;
-//    private int velocidade;
-//    private int defesa;
-//    private int vida;
-//    private int id = 0;
-//
-//    public Criatura() {
-//        this.poder = geradorNumeroAleatorio(10,30);
-//        this.ataque = geradorNumeroAleatorio(5,15);
-//        this.velocidade = gerarVelocidadeAleatoria(1,10);
-//        this.defesa =  geradorNumeroAleatorio(5,15);
-//        this.vida = geradorNumeroAleatorio(200,400);
-//    }
-//
-//    public void setVida(int vida) {
-//        this.vida = vida;
-//    }
-//
-//    public int getVelocidade() {
-//        return velocidade;
-//    }
-//
-//    public int getVida() {
-//        return vida;
-//    }
-//
-//    public int getAtaque() {
-//        return ataque;
-//    }
-//
-//    public int getDefesa() {
-//        return defesa;
-//    }
-//
-//    public int getPoder() {
-//        return poder;
-//    }
-//
-//    public void setVelocidade(int velocidade) {
-//        this.velocidade = velocidade;
-//    }
-//
-//    public void setAtaque(int ataque) {
-//        this.ataque = ataque;
-//    }
-//
-//    public void setDefesa(int defesa) {
-//        this.defesa = defesa;
-//    }
-//
-//    public void setPoder(int poder) {
-//        this.poder = poder;
-//    }
-//
-//    public void setNome(String nome) {
-//        this.nome = nome;
-//    }
-//
-//    public String getNome() {
-//        return nome;
-//    }
-//
-//    public abstract int getId();
-//}
-//
-
 import java.util.Random;
 
 public class Criatura {
-    private  String nome;
+    private String nome;
     private int pvd;
     private int atq;
     private int def;
@@ -96,6 +27,7 @@ public class Criatura {
     public String getNome() {
         return nome;
     }
+
     public void setNome(String nome) {
         this.nome = nome;
     }
@@ -103,6 +35,7 @@ public class Criatura {
     public int getPvd() {
         return pvd;
     }
+
     public void setPv(int pv) {
         this.pvd = pvd;
     }
@@ -110,6 +43,7 @@ public class Criatura {
     public int getAtq() {
         return atq;
     }
+
     public void setAtq(int atq) {
         this.atq = atq;
     }
@@ -117,6 +51,7 @@ public class Criatura {
     public int getDef() {
         return def;
     }
+
     public void setDef(int def) {
         this.def = def;
     }
@@ -124,6 +59,7 @@ public class Criatura {
     public int getVel() {
         return vel;
     }
+
     public void setVel(int vel) {
         this.vel = vel;
     }
@@ -131,6 +67,7 @@ public class Criatura {
     public int getPdr() {
         return pdr;
     }
+
     public void setPdr(int pdr) {
         this.pdr = pdr;
     }
@@ -150,7 +87,7 @@ public class Criatura {
         return pvd <= 0;
     }
 
-    public enum TipoCriatura {
+    public static enum TipoCriatura {
         TERRA,
         AGUA,
         FOGO,
